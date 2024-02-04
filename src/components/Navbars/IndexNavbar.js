@@ -91,18 +91,16 @@ function IndexNavbar() {
           isOpen={navbarCollapse}
         >
           <Nav navbar>
-              <NavItem>
-                <NavLink
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  <i
-                    aria-hidden={true}
-                    className="nc-icon nc-compass-05"
-                  />
-                   Dashboard
-                </NavLink>
-              </NavItem>
+            <NavItem>
+              <NavLink
+                // href="#pablo"
+                href="/dashboard"
+                // onClick={(e) => e.preventDefault()}
+              >
+                <i aria-hidden={true} className="nc-icon nc-compass-05" />
+                 Dashboard
+              </NavLink>
+            </NavItem>
           </Nav>
         </Collapse>
       </Container>

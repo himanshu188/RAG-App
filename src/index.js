@@ -26,6 +26,7 @@ import "assets/scss/paper-kit.scss?v=1.3.0";
 import "assets/demo/demo.css?v=1.3.0";
 // pages
 import Index from "views/Index.js";
+import DashboardPage from "views/dashboard/DashboardPage.js";
 import NucleoIcons from "views/NucleoIcons.js";
 import LandingPage from "views/examples/LandingPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
@@ -38,6 +39,7 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/index" element={<Index />} />
+      <Route path="/dashboard" element={<DashboardPage />} />
       <Route path="/nucleo-icons" element={<NucleoIcons />} />
       <Route path="/landing-page" element={<LandingPage />} />
       <Route path="/profile-page" element={<ProfilePage />} />
