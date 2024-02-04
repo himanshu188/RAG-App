@@ -16,28 +16,19 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React, {useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 // plugin that creates slider
 import Slider from "nouislider";
 import DataService from "./data-service";
 
 // reactstrap components
-import {
-  Button,
-  Label,
-  FormGroup,
-  Input,
-  ontainer,
-  Row,
-  Col,
-  Container,
-} from "reactstrap";
-import dataService from "./data-service";
+import { Button, FormGroup, Input, Row, Col, Container } from "reactstrap";
 
 function SectionBody() {
-    const [apiData, setApiData] = useState(null);
-    const [id, setId] = useState('');
-    // const [inputId, setInputId] = useState('');
+  const [apiData, setApiData] = useState(null);
+  const [id, setId] = useState("");
+  const [sliderValue, setSliderValue] = useState(50); // Initial value
+
   React.useEffect(() => {
     if (
       !document
@@ -62,32 +53,19 @@ function SectionBody() {
       });
     }
   });
-//   React.useEffect(() => {
-//     fetchData();
-//   }, [id]);
 
-    const fetchData = async () => {
-        try {
-            const response = await dataService.get(id);
-            // const result = await response;
-            const result = await response.data.description;
-            setApiData(result);
-            console.log(result);
-
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-
-//   const handleIdSubmit = () => {
-//     setId((prevId) => inputId);
-//   };
-
+  const fetchData = async () => {
+    try {
+      const response = await DataService.get(id);
+      const result = await response.data.description;
+      setApiData(result);
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleInputChange = (event) => {
-    // event.persist(); 
-    // setInputId(event.target.value);
     setId(event.target.value);
   };
 
@@ -95,42 +73,57 @@ function SectionBody() {
     fetchData();
   };
 
+  const handleSliderChange = (event) => {
+    setSliderValue(parseInt(event.target.value, 10));
+  };
+
   return (
     <>
       <div className="section section-buttons">
         <Container>
-            <Row>
-                <Col md="3">
-                    {
-                        (
-                        <FormGroup>
-                            <Input placeholder="Prompt" defaultValue="Prompt" type="text"
-                            value={id}
-                            onChange={handleInputChange}
-                            />
-                        </FormGroup>
-                        )
-                    }
-                </Col>
-                <Col md="3">
-                    <Button
-                    className="btn-round mr-1"
-                    color="default"
-                    onClick={handleButtonClick}
-                    outline
-                    type="button"
-                    >
-                    Default
-                    </Button>
-                </Col>
-            </Row>
-            <p>
+          <Row>
+            <Col md="3">
               {
-                apiData && (
-                    apiData
-                )
+                <FormGroup>
+                  <Input
+                    placeholder="Prompt"
+                    defaultValue="Prompt"
+                    type="text"
+                    value={id}
+                    onChange={handleInputChange}
+                  />
+                </FormGroup>
               }
-            </p>
+            </Col>
+            <Col sm="2">
+              {/* <h3>Sliders</h3> */}
+              <p>Temprature: {sliderValue}</p>
+              <div>
+                <input
+                  className="slider"
+                  type="range"
+                  id="slider"
+                  min={0}
+                  max={100}
+                  value={sliderValue}
+                  onChange={handleSliderChange}
+                />
+              </div>
+              <br />
+            </Col>
+            <Col md="2">
+              <Button
+                className="btn-round mr-1"
+                color="default"
+                onClick={handleButtonClick}
+                outline
+                type="button"
+              >
+                Submit
+              </Button>
+            </Col>
+          </Row>
+          <p>{apiData && apiData}</p>
         </Container>
       </div>
     </>
