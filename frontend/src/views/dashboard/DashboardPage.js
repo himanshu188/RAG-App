@@ -75,6 +75,17 @@ function DashboardPage() {
       document.body.classList.remove("landing-page");
     };
   });
+
+  const appTrendData = [
+    {
+      name: "TikTok",
+      data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+    },
+    {
+      name: "Instagram",
+      data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
+    },
+  ];
   return (
     <>
       <IndexNavbar />
@@ -82,14 +93,46 @@ function DashboardPage() {
       <Row>
         <Col md="6">
           <SalesOverview
-            title={"Sales Overview"}
+            title={"Trends on Tiktok vs Instagram"}
             percentage={5}
-            chart={<LineChart />}
+            chart={<LineChart data={appTrendData} />}
           />
         </Col>
         <Col md="6">
           <ActiveUsers
             title={"Active Users"}
+            percentage={23}
+            chart={<BarChart />}
+          />
+        </Col>
+      </Row>
+      <Row>
+        <Col md="6">
+          <SalesOverview
+            title={"Reels vs Post"}
+            percentage={5}
+            chart={<LineChart data={appTrendData} />}
+          />
+        </Col>
+        <Col md="6">
+          <ActiveUsers
+            title={"Active Users"}
+            percentage={23}
+            chart={<BarChart />}
+          />
+        </Col>
+      </Row>
+      <Row>
+        <Col md="6">
+          <SalesOverview
+            title={""}
+            percentage={5}
+            chart={<LineChart data={appTrendData} />}
+          />
+        </Col>
+        <Col md="6">
+          <ActiveUsers
+            title={"Mid Influencer vs Big Influencer"}
             percentage={23}
             chart={<BarChart />}
           />

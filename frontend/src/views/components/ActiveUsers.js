@@ -16,7 +16,7 @@ const ActiveUsers = ({ title, percentage, chart }) => {
       <CardBody>
         <Flex direction="column" w="100%">
           {chart}
-          <Flex direction="column" mt="24px" mb="36px" alignSelf="flex-start">
+          {/* <Flex direction="column" mt="24px" mb="36px" alignSelf="flex-start">
             <Text fontSize="lg" color={textColor} fontWeight="bold" mb="6px">
               {title}
             </Text>
@@ -30,8 +30,8 @@ const ActiveUsers = ({ title, percentage, chart }) => {
               </Text>{" "}
               than last week
             </Text>
-          </Flex>
-          <SimpleGrid gap={{ sm: "12px" }} columns={4}>
+          </Flex> */}
+          {/* <SimpleGrid gap={{ sm: "12px" }} columns={4}>
             <ChartStatistics
               title={"Users"}
               amount={"32,984"}
@@ -56,7 +56,7 @@ const ActiveUsers = ({ title, percentage, chart }) => {
               percentage={40}
               icon={<StatsIcon h={"15px"} w={"15px"} color={iconBoxInside} />}
             />
-          </SimpleGrid>
+          </SimpleGrid> */}
         </Flex>
       </CardBody>
     </Card>

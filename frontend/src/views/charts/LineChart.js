@@ -2,34 +2,39 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 import { lineChartData, lineChartOptions } from "../variables/charts";
 
-class LineChart extends React.Component {
-  constructor(props) {
-    super(props);
+const LineChart = ({ data }) => {
+  const [chartData, setChartData] = React.useState([]);
+  const [chartOptions, setChartOptions] = React.useState({});
 
-    this.state = {
-      chartData: [],
-      chartOptions: {},
-    };
-  }
+  React.useEffect(() => {
+    setChartOptions(lineChartOptions);
+    setChartData(data);
+  });
+  // constructor(props) {
+  //   super(props);
 
-  componentDidMount() {
-    this.setState({
-      chartData: lineChartData,
-      chartOptions: lineChartOptions,
-    });
-  }
+  //   this.state = {
+  //     chartData: [],
+  //     chartOptions: {},
+  //   };
+  // }
 
-  render() {
-    return (
-      <ReactApexChart
-        options={this.state.chartOptions}
-        series={this.state.chartData}
-        type="area"
-        width="100%"
-        height="100%"
-      />
-    );
-  }
-}
+  // componentDidMount() {
+  //   this.setState({
+  //     chartData: lineChartData,
+  //     chartOptions: lineChartOptions,
+  //   });
+  // }
+
+  return (
+    <ReactApexChart
+      options={chartOptions}
+      series={chartData}
+      type="area"
+      width="100%"
+      height="100%"
+    />
+  );
+};
 
 export default LineChart;
