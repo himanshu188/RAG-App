@@ -67,25 +67,25 @@ function SectionBody() {
                 <img
                   alt="..."
                   className="img-circle img-no-padding img-responsive"
-                  src={require("assets/img/faces/kaci-baum-2.jpg")}
+                  src={require("assets/img/faces/noah_beck.jpg.jpeg")}
                 />
-                <p className="text-center">Brigitte Bardot</p>
+                <p className="text-center">Noah Beck</p>
               </Col>
               <Col className="mr-auto ml-auto" md="2" sm="3">
                 <img
                   alt="..."
                   className="img-circle img-no-padding img-responsive"
-                  src={require("assets/img/faces/kaci-baum-2.jpg")}
+                  src={require("assets/img/faces/adin_ross.jpg.jpeg")}
                 />
-                <p className="text-center">Brigitte Bardot</p>
+                <p className="text-center">Adin Ross</p>
               </Col>
               <Col className="mr-auto ml-auto" md="2" sm="3">
                 <img
                   alt="..."
                   className="img-circle img-no-padding img-responsive"
-                  src={require("assets/img/faces/kaci-baum-2.jpg")}
+                  src={require("assets/img/faces/Cole_Hudson.jpeg")}
                 />
-                <p className="text-center">Brigitte Bardot</p>
+                <p className="text-center">Cole Hudson</p>
               </Col>
             </Row>
           </div>
