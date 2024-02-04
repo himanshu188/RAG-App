@@ -108,6 +108,27 @@ function DashboardPage() {
       data: [290, 288, 329, 280, 341, 222, 253, 317, 91, 184, 450, 217],
     },
   ];
+
+  const danceData = [
+    {
+      name: "Number",
+      data: [330, 250, 110, 300, 490, 350, 270, 130, 425],
+    },
+  ];
+
+  const MemeData = [
+    {
+      name: "Number",
+      data: [294, 97, 275, 250, 372, 79, 424, 116, 456],
+    },
+  ];
+
+  const MusicData = [
+    {
+      name: "Number",
+      data: [59, 244, 234, 220, 372, 314, 268, 287, 130],
+    },
+  ];
   return (
     <>
       <IndexNavbar />
@@ -122,9 +143,9 @@ function DashboardPage() {
         </Col>
         <Col md="6">
           <ActiveUsers
-            title={"Active Users"}
+            title={"Dance Trend"}
             percentage={23}
-            chart={<BarChart />}
+            chart={<BarChart data={danceData} />}
           />
         </Col>
       </Row>
@@ -138,25 +159,25 @@ function DashboardPage() {
         </Col>
         <Col md="6">
           <ActiveUsers
-            title={"Active Users"}
+            title={"Meme trends"}
             percentage={23}
-            chart={<BarChart />}
+            chart={<BarChart data={MemeData} />}
           />
         </Col>
       </Row>
       <Row>
         <Col md="6">
           <SalesOverview
-            title={""}
+            title={"Mid Influencer vs Big Influencer"}
             percentage={5}
             chart={<LineChart data={InfluencerData} />}
           />
         </Col>
         <Col md="6">
           <ActiveUsers
-            title={"Mid Influencer vs Big Influencer"}
+            title={"Music Trends"}
             percentage={23}
-            chart={<BarChart />}
+            chart={<BarChart data={MusicData} />}
           />
         </Col>
       </Row>

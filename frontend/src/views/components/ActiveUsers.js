@@ -15,12 +15,11 @@ const ActiveUsers = ({ title, percentage, chart }) => {
     <Card p="16px">
       <CardBody>
         <Flex direction="column" w="100%">
-          {chart}
-          {/* <Flex direction="column" mt="24px" mb="36px" alignSelf="flex-start">
+          <Flex direction="column" mt="24px" mb="36px" alignSelf="flex-start">
             <Text fontSize="lg" color={textColor} fontWeight="bold" mb="6px">
               {title}
             </Text>
-            <Text fontSize="md" fontWeight="medium" color="gray.400">
+            {/* <Text fontSize="md" fontWeight="medium" color="gray.400">
               <Text
                 as="span"
                 color={percentage > 0 ? "green.400" : "red.400"}
@@ -29,8 +28,9 @@ const ActiveUsers = ({ title, percentage, chart }) => {
                 {percentage > 0 ? `+${percentage}%` : `-${percentage}%`}
               </Text>{" "}
               than last week
-            </Text>
-          </Flex> */}
+            </Text> */}
+          </Flex>
+          {chart}
           {/* <SimpleGrid gap={{ sm: "12px" }} columns={4}>
             <ChartStatistics
               title={"Users"}
