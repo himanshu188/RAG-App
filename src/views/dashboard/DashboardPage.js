@@ -39,7 +39,9 @@ import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 import SalesOverview from "../components/SalesOverview";
+import ActiveUsers from "../components/ActiveUsers";
 import LineChart from "../charts/LineChart";
+import BarChart from "../charts/BarChart";
 
 function DashboardPage() {
   const [activeTab, setActiveTab] = React.useState("1");
@@ -61,11 +63,22 @@ function DashboardPage() {
     <>
       <IndexNavbar />
       <ProfilePageHeader />
-      <SalesOverview
-        title={"Sales Overview"}
-        percentage={5}
-        chart={<LineChart />}
-      />
+      <Row>
+        <Col md="6">
+          <SalesOverview
+            title={"Sales Overview"}
+            percentage={5}
+            chart={<LineChart />}
+          />
+        </Col>
+        <Col md="6">
+          <ActiveUsers
+            title={"Active Users"}
+            percentage={23}
+            chart={<BarChart />}
+          />
+        </Col>
+      </Row>
       <div className="section" />
       <div className="section profile-content">
         <Container>
