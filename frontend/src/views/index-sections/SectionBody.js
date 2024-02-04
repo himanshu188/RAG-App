@@ -58,7 +58,7 @@ function SectionBody() {
     <>
       <div className="section section-buttons">
         <Container>
-          <div className="title">
+          <div className="title btn-center">
             <h2>Influencer</h2>
           </div>
           <div className="section">
@@ -89,7 +89,11 @@ function SectionBody() {
               </Col>
             </Row>
           </div>
+          <div className="title btn-center">
+            <h2>Research</h2>
+          </div>
           <Row>
+            <Col md="3"></Col>
             <Col md="3">
               {
                 <FormGroup>
@@ -131,7 +135,13 @@ function SectionBody() {
               </Button>
             </Col>
           </Row>
-          <p>{apiData && apiData}</p>
+          <Row>
+            <Col md="2"></Col>
+            <Col md="8">
+              <h3>{apiData && apiData}</h3>
+              {/* <h3>Test Data</h3> */}
+            </Col>
+          </Row>
         </Container>
       </div>
     </>

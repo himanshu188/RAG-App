@@ -10,21 +10,6 @@ const LineChart = ({ data }) => {
     setChartOptions(lineChartOptions);
     setChartData(data);
   });
-  // constructor(props) {
-  //   super(props);
-
-  //   this.state = {
-  //     chartData: [],
-  //     chartOptions: {},
-  //   };
-  // }
-
-  // componentDidMount() {
-  //   this.setState({
-  //     chartData: lineChartData,
-  //     chartOptions: lineChartOptions,
-  //   });
-  // }
 
   return (
     <ReactApexChart

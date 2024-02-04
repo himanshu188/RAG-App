@@ -46,41 +46,45 @@ function YouTubeSection() {
   return (
     <>
       <Container>
-        <div className="title">
+        <div className="title btn-center">
           <h2>YouTube</h2>
         </div>
+        <Row>
+          <Col md="4"></Col>
+          <Col md="3">
+            <div className="center">
+              {
+                <FormGroup>
+                  <Input
+                    placeholder="Prompt"
+                    defaultValue="Prompt"
+                    type="text"
+                    value={searchTerm}
+                    onChange={handleInputChange}
+                  />
+                </FormGroup>
+              }
+            </div>
+          </Col>
+          <Col md="2">
+            <Button
+              className="btn-round mr-1"
+              color="default"
+              onClick={handleButtonClick}
+              outline
+              type="button"
+            >
+              Submit
+            </Button>
+          </Col>
+        </Row>
+        <Row>
+          <Col md="2"></Col>
+          <Col md="6">
+            <div>{videoId && <YouTube videoId={videoId} opts={opts} />}</div>
+          </Col>
+        </Row>
       </Container>
-      <Row>
-        <Col md="3">
-          {
-            <FormGroup>
-              <Input
-                placeholder="Prompt"
-                defaultValue="Prompt"
-                type="text"
-                value={searchTerm}
-                onChange={handleInputChange}
-              />
-            </FormGroup>
-          }
-        </Col>
-        <Col md="2">
-          <Button
-            className="btn-round mr-1"
-            color="default"
-            onClick={handleButtonClick}
-            outline
-            type="button"
-          >
-            Submit
-          </Button>
-        </Col>
-      </Row>
-      <Row>
-        <Col md="6">
-          <div>{videoId && <YouTube videoId={videoId} opts={opts} />}</div>
-        </Col>
-      </Row>
     </>
   );
 }

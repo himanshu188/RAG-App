@@ -86,6 +86,28 @@ function DashboardPage() {
       data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
     },
   ];
+
+  const reelsVsPostData = [
+    {
+      name: "Reels",
+      data: [421, 354, 445, 436, 209, 312, 380, 394, 420, 496, 403, 379],
+    },
+    {
+      name: "Post",
+      data: [330, 173, 200, 224, 168, 160, 382, 134, 320, 264, 332, 286],
+    },
+  ];
+
+  const InfluencerData = [
+    {
+      name: "Mid",
+      data: [80, 416, 139, 227, 273, 468, 364, 121, 73, 456, 259, 203],
+    },
+    {
+      name: "Large",
+      data: [290, 288, 329, 280, 341, 222, 253, 317, 91, 184, 450, 217],
+    },
+  ];
   return (
     <>
       <IndexNavbar />
@@ -111,7 +133,7 @@ function DashboardPage() {
           <SalesOverview
             title={"Reels vs Post"}
             percentage={5}
-            chart={<LineChart data={appTrendData} />}
+            chart={<LineChart data={reelsVsPostData} />}
           />
         </Col>
         <Col md="6">
@@ -127,7 +149,7 @@ function DashboardPage() {
           <SalesOverview
             title={""}
             percentage={5}
-            chart={<LineChart data={appTrendData} />}
+            chart={<LineChart data={InfluencerData} />}
           />
         </Col>
         <Col md="6">
