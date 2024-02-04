@@ -33,6 +33,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import YouTube from "react-youtube";
 
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
@@ -50,6 +51,21 @@ function DashboardPage() {
     if (activeTab !== tab) {
       setActiveTab(tab);
     }
+  };
+
+  const videoId = "JRMSDbQtcoQ"; // Replace with the actual YouTube video ID
+
+  const opts = {
+    height: "390",
+    width: "640",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 0,
+    },
+  };
+
+  const containerStyles = {
+    marginLeft: "20px", // Adjust the value as needed
   };
 
   document.documentElement.classList.remove("nav-open");
@@ -77,6 +93,14 @@ function DashboardPage() {
             percentage={23}
             chart={<BarChart />}
           />
+        </Col>
+      </Row>
+      <div className="section" />
+      <Row>
+        <Col md="6">
+          <div style={containerStyles}>
+            {/* <YouTube videoId={videoId} opts={opts} /> */}
+          </div>
         </Col>
       </Row>
       <div className="section" />

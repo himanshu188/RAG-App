@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "https://fakestoreapi.com",
+  baseURL: "http://localhost:8001/v1/llm",
   headers: {
-    "Content-type": "application/json"
-  }
+    "Content-type": "application/json",
+  },
 });

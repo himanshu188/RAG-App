@@ -56,8 +56,11 @@ function SectionBody() {
 
   const fetchData = async () => {
     try {
-      const response = await DataService.get(id);
-      const result = await response.data.description;
+      var data = {
+        query: id,
+      };
+      const response = await DataService.getLLM(data);
+      const result = await response.data.answer;
       setApiData(result);
       console.log(result);
     } catch (error) {
@@ -81,6 +84,37 @@ function SectionBody() {
     <>
       <div className="section section-buttons">
         <Container>
+          <div className="title">
+            <h2>Influencer</h2>
+          </div>
+          <div className="section">
+            <Row>
+              <Col className="mr-auto ml-auto" md="2" sm="3">
+                <img
+                  alt="..."
+                  className="img-circle img-no-padding img-responsive"
+                  src={require("assets/img/faces/kaci-baum-2.jpg")}
+                />
+                <p className="text-center">Brigitte Bardot</p>
+              </Col>
+              <Col className="mr-auto ml-auto" md="2" sm="3">
+                <img
+                  alt="..."
+                  className="img-circle img-no-padding img-responsive"
+                  src={require("assets/img/faces/kaci-baum-2.jpg")}
+                />
+                <p className="text-center">Brigitte Bardot</p>
+              </Col>
+              <Col className="mr-auto ml-auto" md="2" sm="3">
+                <img
+                  alt="..."
+                  className="img-circle img-no-padding img-responsive"
+                  src={require("assets/img/faces/kaci-baum-2.jpg")}
+                />
+                <p className="text-center">Brigitte Bardot</p>
+              </Col>
+            </Row>
+          </div>
           <Row>
             <Col md="3">
               {
