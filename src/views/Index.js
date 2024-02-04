@@ -27,6 +27,7 @@ import DemoFooter from "components/Footers/DemoFooter.js";
 
 // index sections
 import SectionButtons from "views/index-sections/SectionButtons.js";
+import YouTubeSection from "./index-sections/YouTubeSection";
 import SectionBody from "views/index-sections/SectionBody.js";
 import SectionNavbars from "views/index-sections/SectionNavbars.js";
 import SectionNavigation from "views/index-sections/SectionNavigation.js";
@@ -55,6 +56,7 @@ function Index() {
       <IndexHeader />
       <div className="main">
         <SectionBody />
+        <YouTubeSection />
         <SectionButtons />
         <SectionNavbars />
         <SectionNavigation />
